@@ -1,6 +1,10 @@
+import { useHistory } from 'react-router-dom';
+
 import NewCalorieForm from '../components/calories/NewCalorieForm';
 
-function NewCaloriePage() {
+function NewCaloriePage() {  
+  const history = useHistory();
+
   function addMeetupHandler(calorieData) {
     fetch(
       'https://calorie-checker-bc80f-default-rtdb.asia-southeast1.firebasedatabase.app//calories.json',
@@ -11,7 +15,9 @@ function NewCaloriePage() {
           'Content-Type': 'application/json'
         }
       }
-    );
+    ).then(() => {
+      history.replace('/');
+    });
   }
 
   return (
