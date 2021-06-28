@@ -13,18 +13,18 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <Link to='/'>All food calorie</Link>
+            <Link to='/'>All Calories</Link>
           </li>
           <li>
-            <Link to='/new-calorie'>Add New food calorie</Link>
+            <Link to='/new-calorie'>Add calorie</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to='/favorites'>My Favorites
               <span className={classes.badge}>
                 {favoritesCtx.totalFavorites}
               </span>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
