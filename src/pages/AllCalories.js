@@ -1,29 +1,47 @@
+import { useState, useEffect } from 'react';
+
 import CalorieList from '../components/calories/CalorieList';
 
-const DUMMY_DATA = [
-  {
-    id: 'c1',
-    title: 'This is a first calorie',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
-    description:
-      'First description!',
-  },
-  {
-    id: 'c2',
-    title: 'This is a second calorie',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
-    description:
-      'First description!',
-  },
-];
-
 function AllCaloriesPage() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedCalories, setLoadedCalories] = useState([]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(
+      'https://calorie-checker-bc80f-default-rtdb.asia-southeast1.firebasedatabase.app/calories.json'
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const calories = [];
+
+        for (const key in data) {
+          const calorie = {
+            id: key,
+            ...data[key]
+          };
+
+          calories.push(calorie);
+        }
+
+        setIsLoading(false);
+        setLoadedCalories(calories);
+      });
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+  }
   return (
     <section>
       <h1>All Calories</h1>
-      <CalorieList calories={DUMMY_DATA} />
+      <CalorieList calories={loadedCalories} />
     </section>
   );
 }

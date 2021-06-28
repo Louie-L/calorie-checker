@@ -5,9 +5,9 @@ import NewCalorieForm from '../components/calories/NewCalorieForm';
 function NewCaloriePage() {  
   const history = useHistory();
 
-  function addMeetupHandler(calorieData) {
+  function addCalorieHandler(calorieData) {
     fetch(
-      'https://calorie-checker-bc80f-default-rtdb.asia-southeast1.firebasedatabase.app//calories.json',
+      'https://calorie-checker-bc80f-default-rtdb.asia-southeast1.firebasedatabase.app/calories.json',
       {
         method: 'POST',
         body: JSON.stringify(calorieData),
@@ -23,7 +23,7 @@ function NewCaloriePage() {
   return (
     <section>
       <h1>Add New Calorie</h1>
-      <NewCalorieForm onAddCalorie={addMeetupHandler}/>
+      <NewCalorieForm onAddCalorie={addCalorieHandler}/>
     </section>
   );
 }
