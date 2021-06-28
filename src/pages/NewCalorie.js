@@ -1,5 +1,12 @@
+import NewCalorieForm from '../components/calories/NewCalorieForm';
+
 function NewCaloriePage() {
-    return <div>New Calorie Page</div>;
-  }
-  
-  export default NewCaloriePage;
+  return (
+    <section>
+      <h1>Add New Calorie</h1>
+      <NewCalorieForm />
+    </section>
+  );
+}
+
+export default NewCaloriePage;
