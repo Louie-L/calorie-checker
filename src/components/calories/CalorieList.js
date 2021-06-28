@@ -4,13 +4,15 @@ import classes from './CalorieList.module.css';
 function CalorieList(props) {
   return (
     <ul className={classes.list}>
-      {props.calories.map((calorie) => (
+      {props.calories.map((item) => (
         <CalorieItem
-          key={calorie.id}
-          id={calorie.id}
-          image={calorie.image}
-          title={calorie.title}
-          description={calorie.description}
+          key={item.id}
+          id={item.id}
+          image={item.image}
+          name={item.name}
+          catagory={item.catagory}
+          calorie={item.calorie}
+          unit={item.unit}
         />
       ))}
     </ul>

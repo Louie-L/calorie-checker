@@ -44,17 +44,13 @@ function CalorieItem(props) {
   return (
     <li className={classes.item}>
       <Card>
-        <div className={classes.image}>
-          <img src={props.image} alt={props.title} />
-        </div>
         <div className={classes.content}>
-          <h3>{props.title}</h3>
-          <p>{props.description}</p>
+          <h3>{props.name}</h3>
+          <p>{props.catagory}</p>
+          <p>{props.calorie}</p>
+          <p>{props.unit}</p>
         </div>
         <div className={classes.actions}>
-          <button onClick={toggleFavoriteStatusHandler}>
-            {itemIsFavorite ? 'Remove from Favorites' : 'To Favorites'}
-          </button>
           <button onClick={deleteHandler}>Delete</button>
         </div>
       </Card>

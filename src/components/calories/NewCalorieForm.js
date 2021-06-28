@@ -4,21 +4,24 @@ import Card from '../ui/Card';
 import classes from './NewCalorieForm.module.css';
 
 function NewCalorieForm(props) {
-  const titleInputRef = useRef();
-  const imageInputRef = useRef();
-  const descriptionInputRef = useRef();
+  const nameInputRef = useRef();
+  const catagoryInputRef = useRef();
+  const calorieInputRef = useRef();
+  const unitInputRef = useRef();
 
   function submitHandler(event) {
     event.preventDefault();
 
-    const enteredTitle = titleInputRef.current.value;
-    const enteredImage = imageInputRef.current.value;
-    const enteredDescription = descriptionInputRef.current.value;
+    const enteredName = nameInputRef.current.value;
+    const enteredCatagory = catagoryInputRef.current.value;
+    const enteredCalorie = calorieInputRef.current.value;
+    const enteredUnit = unitInputRef.current.value;
 
     const calorieData = {
-      title: enteredTitle,
-      image: enteredImage,
-      description: enteredDescription,
+      name: enteredName,
+      catagory: enteredCatagory,
+      calorie: enteredCalorie,
+      unit: enteredUnit,
     };
 
     props.onAddCalorie(calorieData);
@@ -28,21 +31,20 @@ function NewCalorieForm(props) {
     <Card>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor='title'>Calorie Title</label>
-          <input type='text' required id='title' ref={titleInputRef} />
+          <label htmlFor='name'>Food name</label>
+          <input type='text' required id='name' ref={nameInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='image'>Calorie Image</label>
-          <input type='url' required id='image' ref={imageInputRef} />
+          <label htmlFor='catagory'>Food Catagory</label>
+          <input type='text' required id='catagory' ref={catagoryInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='description'>Description</label>
-          <textarea
-            id='description'
-            required
-            rows='5'
-            ref={descriptionInputRef}
-          ></textarea>
+          <label htmlFor='calorie'>Food Calorie</label>
+          <input type='text' required id='calorie' ref={calorieInputRef} />
+        </div>
+        <div className={classes.control}>
+          <label htmlFor='unit'>Calorie Unit</label>
+          <input type='text' required id='unit' ref={unitInputRef} />
         </div>
         <div className={classes.actions}>
           <button>Add Calorie</button>
