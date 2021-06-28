@@ -1,8 +1,11 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 
 import Card from '../ui/Card';
+import Modal from '../ui/Modal'
+import Backdrop from '../ui/Backdrop'
 import classes from './CalorieItem.module.css';
 import FavoritesContext from '../../store/favorites-context';
+import { db } from '../../services/firebase';
 
 function CalorieItem(props) {
   const favoritesCtx = useContext(FavoritesContext);
@@ -21,6 +24,23 @@ function CalorieItem(props) {
       });
     }
   }
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  function deleteHandler() {
+    setModalIsOpen(true);
+  }
+
+  function confirmdeleteHandler() {
+    const calorieRef = db.ref('calories').child(props.id);
+    calorieRef.remove();
+    setModalIsOpen(true);
+  }
+
+  function closeModalHandler() {
+    setModalIsOpen(false);
+  }
+
   return (
     <li className={classes.item}>
       <Card>
@@ -32,11 +52,16 @@ function CalorieItem(props) {
           <p>{props.description}</p>
         </div>
         <div className={classes.actions}>
-        <button onClick={toggleFavoriteStatusHandler}>
+          <button onClick={toggleFavoriteStatusHandler}>
             {itemIsFavorite ? 'Remove from Favorites' : 'To Favorites'}
           </button>
+          <button onClick={deleteHandler}>Delete</button>
         </div>
       </Card>
+      {modalIsOpen && (
+        <Modal onCancel={closeModalHandler} onConfirm={confirmdeleteHandler} />
+      )}
+      {modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
     </li>
   );
 }
