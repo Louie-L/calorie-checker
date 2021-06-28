@@ -1,34 +1,27 @@
 import { useState, useEffect } from 'react';
 
 import CalorieList from '../components/calories/CalorieList';
+import { db } from '../services/firebase';
 
 function AllCaloriesPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedCalories, setLoadedCalories] = useState([]);
 
   useEffect(() => {
-    setIsLoading(true);
-    fetch(
-      'https://calorie-checker-bc80f-default-rtdb.asia-southeast1.firebasedatabase.app/calories.json'
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const calories = [];
-
-        for (const key in data) {
-          const calorie = {
-            id: key,
-            ...data[key]
-          };
-
-          calories.push(calorie);
-        }
-
-        setIsLoading(false);
-        setLoadedCalories(calories);
-      });
+    setIsLoading(true);  
+    db.ref('calories').on('value', snap => {
+      const data = snap.val();
+      const loadedCalories = [];
+      for (const key in data) {
+        const calorie = {
+          id: key,
+          ...data[key]
+        };
+        loadedCalories.push(calorie);
+      }
+      setIsLoading(false);
+      setLoadedCalories(loadedCalories);
+    });
   }, []);
 
   if (isLoading) {
@@ -38,6 +31,7 @@ function AllCaloriesPage() {
       </section>
     );
   }
+
   return (
     <section>
       <h1>All Calories</h1>
