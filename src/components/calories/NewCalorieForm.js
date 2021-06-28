@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import Card from '../ui/Card';
 import classes from './NewCalorieForm.module.css';
 
-function NewCalorieForm() {
+function NewCalorieForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const descriptionInputRef = useRef();
@@ -21,7 +21,7 @@ function NewCalorieForm() {
       description: enteredDescription,
     };
 
-    console.log(calorieData);
+    props.onAddCalorie(calorieData);
   }
 
   return (
