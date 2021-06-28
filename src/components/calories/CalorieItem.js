@@ -18,7 +18,6 @@ function CalorieItem(props) {
         title: props.title,
         description: props.description,
         image: props.image,
-        address: props.address,
       });
     }
   }
