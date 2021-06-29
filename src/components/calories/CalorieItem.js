@@ -45,13 +45,8 @@ function CalorieItem(props) {
     <li className={classes.item}>
       <Card>
         <div className={classes.content}>
-          <h3>{props.name}</h3>
-          <p>{props.catagory}</p>
-          <p>{props.calorie}</p>
-          <p>{props.unit}</p>
-        </div>
-        <div className={classes.actions}>
-          <button onClick={deleteHandler}>Delete</button>
+          <h3>{props.catagory} - {props.name}</h3>
+          <p>{props.unit} - {props.calorie}cal</p>
         </div>
       </Card>
       {modalIsOpen && (

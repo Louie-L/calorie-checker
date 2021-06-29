@@ -37,7 +37,7 @@ function Navbar() {
 
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Calorie Checker</div>
+      <NavLink className={classes.logo} to={`/`}>Calorie Checker</NavLink>
       <nav className={classes.main__nav}>
         {isResponsiveclose === true ? <>
           <span className={classes.menubar__button} style={{ display: 'none' }} onClick={toggleClass} > <FiXCircle />   </span>
@@ -45,9 +45,6 @@ function Navbar() {
           <span className={classes.menubar__button} style={{ display: 'none' }} onClick={toggleClass} > <FiAlignRight />   </span>
         </>}
         <ul className={boxClass}>
-          <li className={classes.menu__item}>
-            <NavLink exact activeClassName={classes.is__active} onClick={toggleClass} to={`/`}> Home </NavLink>
-          </li>
           <li onClick={toggleSubmenu} className={classes.sub__menus__arrows} > <Link to="#"> Catagories <FiChevronDown /> </Link>
             <ul className={boxClassSubMenu}>
               <li><NavLink onClick={toggleClass} activeClassName={classes.is__active} to='/food'> 食品 </NavLink></li>

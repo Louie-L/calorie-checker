@@ -1,5 +1,5 @@
-.item {
-    margin: 1rem 0;
+  .item {
+    margin: 0.5rem 2rem;
   }
   
   .image {
@@ -26,7 +26,7 @@
   }
 
   .content p {
-    font-size: 0.5rem;
+    font-size: 1rem;
   }
   
   .actions {

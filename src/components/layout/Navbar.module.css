@@ -8,7 +8,7 @@
     padding: 0 10%;
   }
   
-  .logo {
+  .header a.logo {
     font-size: 0.9rem;
     color: white;
     font-weight: bold;
@@ -20,11 +20,9 @@
     text-decoration: none;
     font-size: 0.75rem;
     color: white;
-  }
+  }  
   
-  .header a:hover,
-  .header a:active,
-  .header a.active {
+  .header a:hover {
     color: #004576;
   }
   
@@ -41,10 +39,8 @@
     list-style: none;
   }
   
-  .sub__menus__arrows svg, .sub__menus__arrows__full svg{
-    padding-top: 0px;
-    position: absolute;
-    top: 16px;
+  .sub__menus__arrows svg{
+    margin: 0;
   }
   
   .sub__menus {
@@ -53,7 +49,7 @@
     background: white;
     border: 1px solid lavender;
     width: 125px;
-    left: -12px;
+    left: -1px;
     padding: 2px 0 0 0;
     margin: 0.5rem;
     z-index: 1000;
@@ -61,7 +57,6 @@
   }
 
   .is__active {color: #004576;}
-  .sub__menus__arrows{position: relative;}
   .sub__menus__Active {display: block!important;}
   ul.sub__menus__Active {list-style: none;}
   ul.sub__menus__Active a {color: black;}
@@ -91,7 +86,9 @@
     right: 0;
     top: 0;
     padding: 0;
+    margin-top: 7px;
   }
   .main__nav .main__item a {margin: 10px 17px;text-align: center;color: #000000;}
   .main__nav  ul.main__menu {display: none}
+  .header a:hover {color: white;}
 }
