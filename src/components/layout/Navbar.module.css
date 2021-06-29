@@ -44,7 +44,7 @@
   .sub__menus__arrows svg, .sub__menus__arrows__full svg{
     padding-top: 0px;
     position: absolute;
-    top: 8px;
+    top: 16px;
   }
   
   .sub__menus {
@@ -89,6 +89,8 @@
     z-index: 10007;
     background-color: #429bd3;
     right: 0;
+    top: 0;
+    padding: 0;
   }
   .main__nav .main__item a {margin: 10px 17px;text-align: center;color: #000000;}
   .main__nav  ul.main__menu {display: none}
