@@ -10,15 +10,7 @@ function CaloriesPage(props) {
   useEffect(() => {
     setIsLoading(true);  
     db.ref(props.id).on('value', snap => {
-      const data = snap.val();
-      const loadedCalories = [];
-      for (const key in data) {
-        const calorie = {
-          id: key,
-          ...data[key]
-        };
-        loadedCalories.push(calorie);
-      }
+      const loadedCalories = snap.val();
       setIsLoading(false);
       setLoadedCalories(loadedCalories);
     });
