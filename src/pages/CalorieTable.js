@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import Datatable from '../components/ui/Datatable';
 import { db } from '../services/firebase';
 
+import classes from './CalorieTable.module.css';
+
 function CalorieTablePage() {
     const [isLoading, setIsLoading] = useState(true);
     const [loadedCalories, setLoadedCalories] = useState([]);
@@ -46,18 +48,16 @@ function CalorieTablePage() {
         );
     }
 
-    const columns = loadedCalories[0] && Object.keys(loadedCalories[0])
-    console.log(columns)
-    // columns.remove('unit')
+    const columns = ['name','catagory','calorie']
 
     return (
         <section>
             <div>
                 Search : <input type="text" value={q} onChange={(e) => setQ(e.target.value)} />
             </div>            
-            <p>
-                {columns && columns.map(column => <label>
-                    <input type="checkbox" checked={searchColumns.includes(column)}
+            <div>
+                {columns && columns.map(column => <label className={classes.filter_item}>
+                    <input type="checkbox" checked={searchColumns.includes(column)} className={classes.filter_item}
                     onChange={(e) => {
                         const checked = searchColumns.includes(column)
                         setSearchColumns(prev => checked
@@ -65,10 +65,8 @@ function CalorieTablePage() {
                             : [...prev, column])
                     }} />
                     {column}</label>)}
-            </p>
-            <div>
-                <Datatable data={search(loadedCalories)} />
             </div>
+            <Datatable data={search(loadedCalories)} />
         </section>
     );
 }

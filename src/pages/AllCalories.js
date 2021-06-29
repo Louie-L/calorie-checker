@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 function AllCaloriesPage() {
   return (
     <section>
+      <h1><Link to='/calorie-table'>卡路里表</Link></h1>
       <h1>所有分類</h1>
       <ul>
         <li><Link to='/food'>食品</Link></li>

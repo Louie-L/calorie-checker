@@ -45,6 +45,7 @@ function Navbar() {
           <span className={classes.menubar__button} style={{ display: 'none' }} onClick={toggleClass} > <FiAlignRight />   </span>
         </>}
         <ul className={boxClass}>
+        <li className={classes.menu__item}><NavLink onClick={toggleClass} activeClassName={classes.is__active} to={`/calorie-table`}> Calorie table </NavLink> </li>
           <li onClick={toggleSubmenu} className={classes.sub__menus__arrows} > <Link to="#"> Catagories <FiChevronDown /> </Link>
             <ul className={boxClassSubMenu}>
               <li><NavLink onClick={toggleClass} activeClassName={classes.is__active} to='/food'> 食品 </NavLink></li>
