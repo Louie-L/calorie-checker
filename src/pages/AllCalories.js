@@ -1,41 +1,20 @@
-import { useState, useEffect } from 'react';
-
-import CalorieList from '../components/calories/CalorieList';
-import { db } from '../services/firebase';
+import { Link } from 'react-router-dom';
 
 function AllCaloriesPage() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadedCalories, setLoadedCalories] = useState([]);
-
-  useEffect(() => {
-    setIsLoading(true);  
-    db.ref('calories').on('value', snap => {
-      const data = snap.val();
-      const loadedCalories = [];
-      for (const key in data) {
-        const calorie = {
-          id: key,
-          ...data[key]
-        };
-        loadedCalories.push(calorie);
-      }
-      setIsLoading(false);
-      setLoadedCalories(loadedCalories);
-    });
-  }, []);
-
-  if (isLoading) {
-    return (
-      <section>
-        <p>Loading...</p>
-      </section>
-    );
-  }
-
   return (
     <section>
-      <h1>All Calories</h1>
-      <CalorieList calories={loadedCalories} />
+      <h1>所有分類</h1>
+      <ol>
+        <li><Link to='/food'>食品</Link></li>
+        <li><Link to='/grains'>五穀類</Link></li>
+        <li><Link to='/fisheggmeat'>魚、蛋、肉類</Link></li>
+        <li><Link to='/seafood'>海鮮類</Link></li>
+        <li><Link to='/vegetables'>蔬菜類</Link></li>
+        <li><Link to='/desserts'>甜品類</Link></li>
+        <li><Link to='/fruits'>水果類</Link></li>
+        <li><Link to='/drinks'>飲品類</Link></li>
+        <li><Link to='/others'>其他</Link></li>
+      </ol>
     </section>
   );
 }
