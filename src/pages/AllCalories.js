@@ -6,9 +6,9 @@ import NewTag from '../components/ui/NewTag'
 function AllCaloriesPage() {
   return (
     <section>
-      <h1><Link to='/bmi'>BMI</Link><NewTag/></h1><Hr color='black'/>
-      <h1><Link to='/calorie-table'>卡路里表</Link><NewTag/></h1><Hr color='black'/>
-      <h1>所有分類</h1>
+      <h4><Link to='/bmi'>BMI</Link><NewTag/></h4><Hr color='black'/>
+      <h4><Link to='/calorie-table'>卡路里表</Link><NewTag/></h4><Hr color='black'/>
+      <h4>所有分類</h4>
       <ul>
         <li><Link to='/food'>食品</Link></li>
         <li><Link to='/grains'>五穀類</Link></li>

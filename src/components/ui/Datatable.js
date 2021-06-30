@@ -11,26 +11,26 @@
 ]
 */
 
+import { Table } from 'react-bootstrap'
 
 function Datatable({ data }) {
     const columns = data[0] && Object.keys(data[0])
 
     return (
-        <table striped hover border>
+        <Table striped hover>
             <thead>
                 <tr>{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr>
             </thead>
             <tbody>
                 {data.map(row => (
-                    <tr>
-                        {
-                            columns.map((column) => (
-                                <td>{row[column]}</td>
-                            ))}
+                    <tr> {
+                        columns.map((column) => (
+                            <td>{row[column]}</td>
+                        ))}
                     </tr>
                 ))}
             </tbody>
-        </table>
+        </Table>
     );
 }
 

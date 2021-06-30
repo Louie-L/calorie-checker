@@ -25,7 +25,7 @@ function CalorieItem(props) {
       <Card>
         <div className={classes.content}>
           <h3>{props.catagory} - {props.name}</h3>
-          <p>{props.unit} - {props.calorie}cal</p>
+          <span>{props.unit} - {props.calorie}cal</span>
         </div>
       </Card>
       {modalIsOpen && (

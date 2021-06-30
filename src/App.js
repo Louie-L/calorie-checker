@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import BMIPage from './pages/BMI';
 import CalorieTablePage from './pages/CalorieTable';
