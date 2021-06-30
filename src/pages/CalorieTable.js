@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import Datatable from '../components/ui/Datatable';
+import CalorieDatatable from '../components/calories/CalorieDatatable';
 import { db } from '../services/firebase';
 
 import classes from './CalorieTable.module.css';
@@ -65,7 +65,7 @@ function CalorieTablePage() {
                     }} />
                     {column}</label>)}
             </div>
-            <Datatable data={search(loadedCalories)} />
+            <CalorieDatatable data={search(loadedCalories)} />
         </section>
     );
 }
