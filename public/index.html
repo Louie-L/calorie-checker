@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <meta name="theme-color" content="#000000" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta
       name="description"
       content="Web site created using create-react-app"
@@ -41,5 +42,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      if('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('./serviceworker.js')
+                  .then((reg) => console.log('Success: ', reg.scope))
+                  .catch((err) => console.log('Failure: ', err));
+          })
+      }
+  </script>
   </body>
 </html>
