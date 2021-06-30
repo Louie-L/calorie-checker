@@ -1,12 +1,10 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FiAlignRight, FiXCircle, FiChevronDown } from "react-icons/fi";
 
 import classes from './Navbar.module.css';
-import FavoritesContext from '../../store/favorites-context';
 
 function Navbar() {
-  const favoritesCtx = useContext(FavoritesContext);
 
   const [isMenu, setisMenu] = useState(false);
   const [isResponsiveclose, setResponsiveclose] = useState(false);

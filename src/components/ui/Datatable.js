@@ -2,11 +2,10 @@ import React from 'react';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 import 'react-bootstrap-table/css/react-bootstrap-table.css';
-import classes from './Datatable.module.css';
 export default class Table extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
         return (

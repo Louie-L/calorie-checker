@@ -10,6 +10,7 @@ function CalorieTablePage() {
     const [loadedCalories, setLoadedCalories] = useState([]);
     const [q, setQ] = useState("");
     const [searchColumns, setSearchColumns] = useState(['name', 'catagory'])
+    const columns = ['name','catagory','calorie']
 
     function search(rows) {
         return rows.filter((row) =>
@@ -47,8 +48,6 @@ function CalorieTablePage() {
             </section>
         );
     }
-
-    const columns = ['name','catagory','calorie']
 
     return (
         <section>
