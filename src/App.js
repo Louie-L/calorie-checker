@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 
+import BMIPage from './pages/BMI';
 import CalorieTablePage from './pages/CalorieTable';
 import AllCaloriesPage from './pages/AllCalories';
 import FoodPage from './pages/FoodCalories';
@@ -22,6 +23,9 @@ function App() {
         <Switch>
           <Route path='/' exact>
             <AllCaloriesPage />
+          </Route>
+          <Route path='/bmi'>
+            <BMIPage />
           </Route>
           <Route path='/calorie-table'>
             <CalorieTablePage />

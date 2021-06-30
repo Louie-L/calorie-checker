@@ -1,21 +1,37 @@
-import React from 'react';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+/*
+[
+    {
+        'column1': 'value1',
+        'column2': 'value2'
+    },
+    {
+        'column1': 'value3',
+        'column2': 'value4'
+    },
+]
+*/
 
-import 'react-bootstrap-table/css/react-bootstrap-table.css';
-export default class Table extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // }
 
-    render() {
-        return (
-            <BootstrapTable data={this.props.data} striped hover>
-                <TableHeaderColumn dataField='id' isKey hidden>ID</TableHeaderColumn>
-                <TableHeaderColumn dataField='name' width='40%' tdStyle={{'whiteSpace':'normal'}}>Name</TableHeaderColumn>
-                <TableHeaderColumn dataField='catagory' tdStyle={{'whiteSpace':'normal'}}>Catagory</TableHeaderColumn>
-                <TableHeaderColumn dataField='calorie' tdStyle={{'whiteSpace':'normal'}}>Calorie</TableHeaderColumn>
-                <TableHeaderColumn dataField='unit' tdStyle={{'whiteSpace':'normal'}}>Unit</TableHeaderColumn>
-            </BootstrapTable>
-        );
-    }
+function Datatable({ data }) {
+    const columns = data[0] && Object.keys(data[0])
+
+    return (
+        <table striped hover border>
+            <thead>
+                <tr>{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr>
+            </thead>
+            <tbody>
+                {data.map(row => (
+                    <tr>
+                        {
+                            columns.map((column) => (
+                                <td>{row[column]}</td>
+                            ))}
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    );
 }
+
+export default Datatable;
