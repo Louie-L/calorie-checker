@@ -15,7 +15,7 @@ function Layout(props) {
               <NavDropdown.Item><Link to='/calorie-calculate'>消耗和所需熱量</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to='/calorie-table'>卡路里表</Link></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/new-calorie">新增卡路里</NavDropdown.Item>
+              <NavDropdown.Item><Link to='/new-calorie'>新增卡路里</Link></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="所有分類" id="basic-nav-dropdown">
               <NavDropdown.Item><Link to='/food'>食品</Link></NavDropdown.Item>
