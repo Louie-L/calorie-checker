@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { ListGroup } from 'react-bootstrap'
 
-import NewTag from '../components/ui/NewTag'
+import RedTag from '../components/ui/RedTag'
 
 function AllCaloriesPage() {
   return (
     <section>
       <ListGroup className="m-4">
-        <ListGroup.Item><Link to='/bmi'>BMI</Link><NewTag /><hr/></ListGroup.Item>
-        <ListGroup.Item><Link to='/calorie-calculate'>消耗和所需熱量</Link><NewTag /><hr/></ListGroup.Item>
-        <ListGroup.Item><Link to='/calorie-table'>卡路里表</Link><NewTag /><hr/></ListGroup.Item>
+        <ListGroup.Item><Link to='/bmi'>BMI</Link><RedTag text='New!'/><hr/></ListGroup.Item>
+        <ListGroup.Item><Link to='/calorie-calculate'>消耗和所需熱量</Link><RedTag text='New!' /><hr/></ListGroup.Item>
+        <ListGroup.Item><Link to='/calorie-table'>卡路里表</Link><RedTag text='Updated!' /><hr/></ListGroup.Item>
 
         <ListGroup.Item><Link to='/food'>食品</Link></ListGroup.Item>
         <ListGroup.Item><Link to='/grains'>五穀類</Link></ListGroup.Item>
