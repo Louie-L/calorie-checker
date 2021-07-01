@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 
-import Card from '../ui/Card';
-import classes from './NewCalorieForm.module.css';
+import { Card, Form, Button } from 'react-bootstrap';
 
 function NewCalorieForm(props) {
   const nameInputRef = useRef();
@@ -29,27 +28,21 @@ function NewCalorieForm(props) {
 
   return (
     <Card>
-      <form className={classes.form} onSubmit={submitHandler}>
-        <div className={classes.control}>
-          <label htmlFor='name'>Food name</label>
-          <input type='text' required id='name' ref={nameInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor='catagory'>Food Catagory</label>
-          <input type='text' required id='catagory' ref={catagoryInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor='calorie'>Food Calorie</label>
-          <input type='text' required id='calorie' ref={calorieInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor='unit'>Calorie Unit</label>
-          <input type='text' required id='unit' ref={unitInputRef} />
-        </div>
-        <div className={classes.actions}>
-          <button>Add Calorie</button>
-        </div>
-      </form>
+      <Card.Body>
+        <Form onSubmit={submitHandler}>
+          <Form.Group className="mb-4" controlId="formBasic">
+            <Form.Label htmlFor="name">Food name</Form.Label>
+            <Form.Control type="text" className="mb-3" required id="name" ref={nameInputRef} />
+            <Form.Label htmlFor="catagory">Food Catagory</Form.Label>
+            <Form.Control type="text" className="mb-3" required id="catagory" ref={catagoryInputRef} />
+            <Form.Label htmlFor="calorie">Food Calorie</Form.Label>
+            <Form.Control type="text" className="mb-3" required id="calorie" ref={calorieInputRef} />
+            <Form.Label htmlFor="unit">Calorie Unit</Form.Label>
+            <Form.Control type="text" className="mb-3" required id="unit" ref={unitInputRef} />
+          </Form.Group>
+          <Button variant="info">Add Calorie</Button>
+        </Form>
+      </Card.Body>
     </Card>
   );
 }

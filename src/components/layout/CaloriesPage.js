@@ -26,7 +26,7 @@ function CaloriesPage(props) {
 
   return (
     <section>
-      <h1>{props.title}</h1>
+      <h1 className="mb-5">{props.title}</h1>
       <CalorieList calories={loadedCalories} />
     </section>
   );

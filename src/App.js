@@ -2,6 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import BMIPage from './pages/BMI';
+import CalorieCalculatePage from './pages/CalorieCalculate'
 import CalorieTablePage from './pages/CalorieTable';
 import AllCaloriesPage from './pages/AllCalories';
 import FoodPage from './pages/FoodCalories';
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path='/bmi'>
             <BMIPage />
+          </Route>
+          <Route path='/calorie-calculate'>
+            <CalorieCalculatePage />
           </Route>
           <Route path='/calorie-table'>
             <CalorieTablePage />
