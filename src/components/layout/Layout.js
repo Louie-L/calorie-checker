@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import classes from './Layout.module.css';
 
@@ -10,22 +11,22 @@ function Layout(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <NavDropdown title="卡路里" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/bmi">BMI</NavDropdown.Item>
-              <NavDropdown.Item href="/calorie-calculate">消耗和所需熱量</NavDropdown.Item>
-              <NavDropdown.Item href="/calorie-table">卡路里表</NavDropdown.Item>
+              <NavDropdown.Item><Link to='/bmi'>BMI</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/calorie-calculate'>消耗和所需熱量</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/calorie-table'>卡路里表</Link></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/new-calorie">新增卡路里</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="所有分類" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/food">食品</NavDropdown.Item>
-              <NavDropdown.Item href="/grains">五穀類</NavDropdown.Item>
-              <NavDropdown.Item href="/fisheggmeat">魚、蛋、肉類</NavDropdown.Item>
-              <NavDropdown.Item href="/seafood">海鮮類</NavDropdown.Item>
-              <NavDropdown.Item href="/vegetables">蔬菜類</NavDropdown.Item>
-              <NavDropdown.Item href="/desserts">甜品類</NavDropdown.Item>
-              <NavDropdown.Item href="/fruits">水果類</NavDropdown.Item>
-              <NavDropdown.Item href="/drinks">飲品類</NavDropdown.Item>
-              <NavDropdown.Item href="/others">其他</NavDropdown.Item>
+              <NavDropdown.Item><Link to='/food'>食品</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/grains'>五穀類</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/fisheggmeat'>魚、蛋、肉類</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/seafood'>海鮮類</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/vegetables'>蔬菜類</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/desserts'>甜品類</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/fruits'>水果類</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/drinks'>飲品類</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/others'>其他</Link></NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
