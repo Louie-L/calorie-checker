@@ -48,7 +48,7 @@ const 運動消耗熱量 = [
 function CalorieCalculatePage() {
     return (
         <section className="mb-5">
-            <h1 className="mb-5">一天可以吃多少卡路里？</h1>
+            <h2 className="mb-4">一天可以吃多少卡路里？</h2>
             <p>每日熱量需求量取決於你的基因、年齡、體重、身體、日常活動及訓練計劃。</p>
             <Card className="mb-3">
                 <Card.Body>

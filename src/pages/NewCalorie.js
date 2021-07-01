@@ -22,7 +22,7 @@ function NewCaloriePage() {
 
   return (
     <section>
-      <h1 className="mb-5">新增卡路里</h1>
+      <h2>新增卡路里</h2>
       <NewCalorieForm onAddCalorie={addCalorieHandler}/>
     </section>
   );

@@ -1,5 +1,6 @@
 import { Card } from 'react-bootstrap'
 import Datatable from "../components/ui/Datatable";
+import BMIForm from '../components/calories/BMIForm';
 
 const 體重指數 = [
     {
@@ -30,24 +31,6 @@ const 體重指數 = [
 ]
 
 const 男性理想體重表 = [
-    {
-        '厘米': 162.5,
-        '磅 (小骨骼型)': '108-118',
-        '磅 (中骨骼型)': '116-127',
-        '磅 (大骨骼型)': '124-139',
-    },
-    {	
-        '厘米': 165.0,
-        '磅 (小骨骼型)': '112-122',
-        '磅 (中骨骼型)': '120-131',
-        '磅 (大骨骼型)': '128-143',
-    },
-    {	
-        '厘米': 167.5,
-        '磅 (小骨骼型)': '118-128',
-        '磅 (中骨骼型)': '124-135',
-        '磅 (大骨骼型)': '132-147',
-    },
     {	
         '厘米': 170.0,
         '磅 (小骨骼型)': '122-132',
@@ -108,7 +91,13 @@ const 骨骼量 = [
 function BMIPage() {
     return (
         <section className="mb-5">
-            <h1 className="mb-5">BMI</h1>
+            <h2>BMI</h2>
+            <Card className="mb-3">
+                <Card.Body>
+                    <Card.Title>快速計算</Card.Title>
+                    <BMIForm />
+                </Card.Body>
+            </Card>
             <Card className="mb-3">
                 <Card.Body>
                     <Card.Title>體重指數</Card.Title>

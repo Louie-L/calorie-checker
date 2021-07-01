@@ -16,23 +16,23 @@ class CalorieCalculateForm extends React.Component {
   };
 
   handleAgeChange = (event) => {
-    this.setState({ age: parseInt(event.target.value) });
+    this.setState({ age: parseFloat(event.target.value) });
   };
 
   handleWeightChange = (event) => {
-    this.setState({ weight: parseInt(event.target.value) });
+    this.setState({ weight: parseFloat(event.target.value) });
   };
 
   handleHeightChange = (event) => {
-    this.setState({ height: parseInt(event.target.value) });
+    this.setState({ height: parseFloat(event.target.value) });
   };
 
   handleActivityChange = (event) => {
-    this.setState({ activity: parseInt(event.target.value) });
+    this.setState({ activity: parseFloat(event.target.value) });
   };
 
   handleExerciseChange = (event) => {
-    this.setState({ exercise: parseInt(event.target.value) });
+    this.setState({ exercise: parseFloat(event.target.value) });
   };
 
   handleGoalChange = (event) => {
@@ -41,7 +41,6 @@ class CalorieCalculateForm extends React.Component {
 
 
   submitHandler = (event) => {
-    console.log(this.state)
     event.preventDefault();
 
     const ageEntered = this.state.age;
@@ -55,11 +54,11 @@ class CalorieCalculateForm extends React.Component {
     const PALCalculated = RMRCalculated * activityEntered
     const calorieNeeded = PALCalculated + exerciseEntered
     const calorieGoal = calorieNeeded * goalEntered
-
     this.setState({ RMRCalculated: RMRCalculated });
     this.setState({ PALCalculated: PALCalculated });
     this.setState({ calorieNeeded: calorieNeeded });
     this.setState({ calorieGoal: calorieGoal });
+    console.log(this.state)
   };
 
   render() {
@@ -74,11 +73,11 @@ class CalorieCalculateForm extends React.Component {
           <Col className="pr-1">
             <Form.Control type="text" name="weight" required
               onChange={this.handleWeightChange}
-              placeholder="體重"/>
+              placeholder="體重(公斤)"/>
           </Col>
           <Col><Form.Control type="text" name="height" required
             onChange={this.handleHeightChange}
-            placeholder="身高"/>
+            placeholder="身高(厘米)"/>
           </Col>
         </Row>
         <Row className="mb-2">
