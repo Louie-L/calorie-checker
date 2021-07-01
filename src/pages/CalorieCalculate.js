@@ -1,7 +1,7 @@
-import { useRef } from 'react';
 
-import { Row, Col, Card, ListGroup, Form, Button } from 'react-bootstrap'
+import { Card, ListGroup } from 'react-bootstrap'
 import TwoColumnDatatable from "../components/ui/TwoColumnDatatable";
+import CalorieCalculateForm from '../components/calories/CalorieCalculateForm';
 
 const RMR = [
     {
@@ -46,53 +46,6 @@ const 運動消耗熱量 = [
 ]
 
 function CalorieCalculatePage() {
-    const ageInputRef = useRef();
-    const weightInputRef = useRef();
-    const heightInputRef = useRef();
-    const activityInputRef = useRef();
-    const exerciseInputRef = useRef();
-    const goalInputRef = useRef();
-
-    function handleAgeChange (e) {
-        this.setState({ age: e.target.value });
-    }
-    function handleWeightChange (e) {
-        this.setState({ weight: e.target.value });
-    }
-
-    function handleHeightChange (e) {
-        this.setState({ height: e.target.value });
-    }
-
-    function handleActivityChange (e) {
-        this.setState({ activity: e.target.value });
-    }
-
-    function handleExerciseChange (e) {
-        this.setState({ exercise: e.target.value });
-    }
-
-    function handleGoalChange (e) {
-        this.setState({ goal: e.target.value });
-    }
-
-
-    function submitHandler(event) {
-        event.preventDefault();
-
-        const ageEntered = ageInputRef.current.value;
-        const weightEntered = weightInputRef.current.value;
-        const heightEntered = heightInputRef.current.value;
-        const activityEntered = activityInputRef.current.value;
-        const exerciseEntered = exerciseInputRef.current.value;
-        const goalEntered = goalInputRef.current.value;
-
-        const RMRCalculated = (10 * weightEntered) + (6.25 * heightEntered) - (5 * ageEntered) + 5
-        const PALCalculated = RMR * activityEntered
-        const calorieNeeded = PAL + exerciseEntered
-        const calorieGoal = calorieNeeded * goalEntered
-    }
-
     return (
         <section className="mb-5">
             <h1 className="mb-5">一天可以吃多少卡路里？</h1>
@@ -100,58 +53,7 @@ function CalorieCalculatePage() {
             <Card className="mb-3">
                 <Card.Body>
                     <Card.Title>快速計算</Card.Title>
-                    <Form onSubmit={submitHandler}>
-                        <Row className="mb-2">
-                            <Col className="pr-1">
-                                <Form.Control type="text" name="age" required
-                                    ref={ageInputRef}
-                                    onChange={handleAgeChange}
-                                    placeholder="年齡"
-                                    value="26" />
-                            </Col>
-                            <Col className="pr-1">
-                                <Form.Control type="text" name="weight" required
-                                    ref={weightInputRef}
-                                    onChange={handleWeightChange}
-                                    placeholder="體重"
-                                    value="103" />
-                            </Col>
-                            <Col><Form.Control type="text" name="height" required
-                                ref={heightInputRef}
-                                onChange={handleHeightChange}
-                                placeholder="身高"
-                                value="183" />
-                            </Col>
-                        </Row>
-                        <Row className="mb-2">
-                            <Col className="pr-1">
-                                <Form.Control type="text" name="activity" required
-                                    ref={activityInputRef}
-                                    onChange={handleActivityChange}
-                                    placeholder="日常活動程度"
-                                    value="1.2" />
-                            </Col>
-                            <Col className="pr-1">
-                                <Form.Control type="text" name="exercise" required
-                                    ref={exerciseInputRef}
-                                    onChange={handleExerciseChange}
-                                    placeholder="運動消耗熱量"
-                                    value="0" />
-                            </Col>
-                            <Col>
-                                <Form.Control type="text" name="goal" required
-                                    ref={goalInputRef}
-                                    onChange={handleGoalChange}
-                                    placeholder="目標"
-                                    value="0.85" />
-                            </Col>
-                        </Row>
-                        <Button className="mb-4" variant="info">Submit</Button>
-                        <p>靜止代謝率: {}</p>
-                        <p>每日的能量消耗: {}</p>
-                        <p>目前體重的所需熱量值: {}</p>
-                        <p>每日應攝取: {}</p>
-                    </Form>
+                    <CalorieCalculateForm />
                 </Card.Body>
             </Card>
             <Card className="mb-3">
