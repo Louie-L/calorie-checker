@@ -6,11 +6,12 @@ import RedTag from '../components/ui/RedTag'
 function AllCaloriesPage() {
   return (
     <section>
-      <ListGroup className="m-4 p-2">
-        <ListGroup.Item action className="border-bottom-0"><Link to='/bmi'>BMI</Link><RedTag text='New!'/><hr/></ListGroup.Item>
-        <ListGroup.Item action className="border-bottom-0"><Link to='/calorie-calculate'>消耗和所需熱量</Link><RedTag text='New!' /><hr/></ListGroup.Item>
-        <ListGroup.Item action className="border-bottom-0"><Link to='/calorie-table'>卡路里表</Link><RedTag text='Updated!' /><hr/></ListGroup.Item>
+      <ListGroup className="m-4">
+        <ListGroup.Item action className="pt-4 border-bottom-0"><Link to='/bmi'>BMI</Link><hr /></ListGroup.Item>
+        <ListGroup.Item action className="border-bottom-0"><Link to='/calorie-calculate'>消耗和所需熱量</Link><hr /></ListGroup.Item>
+        <ListGroup.Item action className="border-bottom-0"><Link to='/tip1'>減肥淨係睇熱量?</Link><RedTag text='New!' /><hr /></ListGroup.Item>
 
+        <ListGroup.Item action className="border-bottom-0"><Link to='/calorie-table'>卡路里表</Link><hr /></ListGroup.Item>
         <ListGroup.Item action className="border-bottom-0"><Link to='/food'>食品</Link></ListGroup.Item>
         <ListGroup.Item action className="border-bottom-0"><Link to='/grains'>五穀類</Link></ListGroup.Item>
         <ListGroup.Item action className="border-bottom-0"><Link to='/fisheggmeat'>魚、蛋、肉類</Link></ListGroup.Item>

@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import BMIPage from './pages/BMI';
 import CalorieCalculatePage from './pages/CalorieCalculate'
+import Tip1Page from './pages/Tip1';
+
 import CalorieTablePage from './pages/CalorieTable';
 import AllCaloriesPage from './pages/AllCalories';
 import FoodPage from './pages/FoodCalories';
@@ -31,6 +33,9 @@ function App() {
           </Route>
           <Route path='/calorie-calculate'>
             <CalorieCalculatePage />
+          </Route>
+          <Route path='/tip1'>
+            <Tip1Page />
           </Route>
           <Route path='/calorie-table'>
             <CalorieTablePage />
