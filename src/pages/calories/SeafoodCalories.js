@@ -1,4 +1,4 @@
-import CaloriesPage from '../components/layout/CaloriesPage';
+import CaloriesPage from '../../components/layout/CaloriesPage';
 
 function SeafoodCaloriesPage() {
   return (
