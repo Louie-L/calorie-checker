@@ -10,7 +10,7 @@ function CalorieTablePage() {
     const [loadedCalories, setLoadedCalories] = useState([]);
     const [q, setQ] = useState("");
     const [searchColumns, setSearchColumns] = useState(['name', 'catagory'])
-    const columns = ['name','catagory','calorie']
+    const columns = ['name', 'catagory', 'calorie']
 
     function search(rows) {
         return rows.filter((row) =>
@@ -53,16 +53,16 @@ function CalorieTablePage() {
         <section>
             <div>
                 Search : <input type="text" value={q} onChange={(e) => setQ(e.target.value)} />
-            </div>            
+            </div>
             <div>
-                {columns && columns.map(column => <label className={classes.filter_item}>
-                    <input type="checkbox" checked={searchColumns.includes(column)} className={classes.filter_item}
-                    onChange={(e) => {
-                        const checked = searchColumns.includes(column)
-                        setSearchColumns(prev => checked
-                            ? prev.filter(sc => sc !== column)
-                            : [...prev, column])
-                    }} />
+                {columns && columns.map(column => <label style={{ margin: '1rem 0.6rem 1rem 0' }}>
+                    <input type="checkbox" checked={searchColumns.includes(column)} style={{ margin: '0 0.3rem 0 0' }}
+                        onChange={(e) => {
+                            const checked = searchColumns.includes(column)
+                            setSearchColumns(prev => checked
+                                ? prev.filter(sc => sc !== column)
+                                : [...prev, column])
+                        }} />
                     {column}</label>)}
             </div>
             <CalorieDatatable data={search(loadedCalories)} />
