@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react';
 import CalorieDatatable from '../components/calories/CalorieDatatable';
 import { db } from '../services/firebase';
 
-import classes from './CalorieTable.module.css';
-
 function CalorieTablePage() {
     const [isLoading, setIsLoading] = useState(true);
     const [loadedCalories, setLoadedCalories] = useState([]);
