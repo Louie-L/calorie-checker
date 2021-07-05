@@ -8,16 +8,11 @@ class BMIForm extends React.Component {
     BMICalculated: 0,
   };
 
-  handleWeightChange = (event) => {
-    this.setState({ weight: parseInt(event.target.value) });
-  };
-
-  handleHeightChange = (event) => {
-    this.setState({ height: parseInt(event.target.value) });
+  inputChangeHandler = (event) => {
+    this.setState({ [event.target.name]: parseInt(event.target.value) });
   };
 
   submitHandler = (event) => {
-    console.log(this.state)
     event.preventDefault();
 
     const weightEntered = this.state.weight;
@@ -34,12 +29,13 @@ class BMIForm extends React.Component {
         <Row className="mt-4 mb-3">
           <Col className="pr-1">
             <Form.Control type="text" name="weight" required
-              onChange={this.handleWeightChange}
+              onChange={this.inputChangeHandler}
               placeholder="體重(公斤)" />
           </Col>
-          <Col><Form.Control type="text" name="height" required
-            onChange={this.handleHeightChange}
-            placeholder="身高(厘米)" />
+          <Col className="pr-1">
+            <Form.Control type="text" name="height" required
+              onChange={this.inputChangeHandler}
+              placeholder="身高(厘米)" />
           </Col>
           <Col>
             <Button variant="info" type="submit">Submit</Button>

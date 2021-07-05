@@ -1,6 +1,7 @@
 import { Card } from 'react-bootstrap'
 import Datatable from "../components/ui/Datatable";
 import BMIForm from '../components/calories/BMIForm';
+import WeightForm from '../components/calories/WeightForm'
 
 const 體重指數 = [
     {
@@ -177,6 +178,7 @@ function BMIPage() {
                 <Card.Body>
                     <Card.Title>快速計算</Card.Title>
                     <BMIForm />
+                    <WeightForm />
                 </Card.Body>
             </Card>
             <Card className="mb-3">

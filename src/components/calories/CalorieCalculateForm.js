@@ -54,7 +54,6 @@ class CalorieCalculateForm extends React.Component {
     this.setState({ PALCalculated: PALCalculated });
     this.setState({ calorieNeeded: calorieNeeded });
     this.setState({ calorieGoal: calorieGoal });
-    console.log(this.state)
   };
 
   render() {
