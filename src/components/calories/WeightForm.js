@@ -33,14 +33,14 @@ class WeightForm extends React.Component {
               onChange={this.inputChangeHandler}
               placeholder="公斤" />
           </Col>
-          <Col className="pl-3">
+          <Col className="pl-2">
             <Button variant="info" onClick={this.convertToPounds}>轉換</Button>
           </Col>
           <Col className="pr-1"><Form.Control type="text" name="pounds" required
             onChange={this.inputChangeHandler}
             placeholder="磅" />
           </Col>
-          <Col className="pl-3">
+          <Col className="pl-2">
             <Button variant="info" onClick={this.convertToKg}>轉換</Button>
           </Col>
         </Row>
