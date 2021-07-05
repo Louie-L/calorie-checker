@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import { Form } from 'react-bootstrap'
 import CalorieDatatable from '../components/calories/CalorieDatatable';
 import { db } from '../services/firebase';
 
@@ -49,20 +49,27 @@ function CalorieTablePage() {
 
     return (
         <section>
-            <div>
-                Search : <input type="text" value={q} onChange={(e) => setQ(e.target.value)} />
-            </div>
-            <div>
-                {columns && columns.map(column => <label style={{ margin: '1rem 0.6rem 1rem 0' }}>
-                    <input type="checkbox" checked={searchColumns.includes(column)} style={{ margin: '0 0.3rem 0 0' }}
-                        onChange={(e) => {
-                            const checked = searchColumns.includes(column)
-                            setSearchColumns(prev => checked
-                                ? prev.filter(sc => sc !== column)
-                                : [...prev, column])
-                        }} />
-                    {column}</label>)}
-            </div>
+            <Form>
+                <Form.Group className="mb-3" controlId="formSearch">
+                    <Form.Control type="text" placeholder="Search" value={q} onChange={(e) => setQ(e.target.value)} />
+                    <div key={'inline-checkbox'} className="mt-3">
+                        {columns && columns.map(column => (
+                            <Form.Check
+                                inline
+                                type="checkbox"
+                                label={column}
+                                checked={searchColumns.includes(column)}
+                                onChange={(e) => {
+                                    const checked = searchColumns.includes(column)
+                                    setSearchColumns(prev => checked
+                                        ? prev.filter(sc => sc !== column)
+                                        : [...prev, column])
+                                }}
+                            />
+                        ))}
+                    </div>
+                </Form.Group>
+            </Form>
             <CalorieDatatable data={search(loadedCalories)} />
         </section>
     );

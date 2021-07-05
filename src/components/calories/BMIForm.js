@@ -31,18 +31,20 @@ class BMIForm extends React.Component {
   render() {
     return (
       <Form onSubmit={this.submitHandler}>
-        <Row className="mb-2">
+        <Row className="mt-4 mb-3">
           <Col className="pr-1">
             <Form.Control type="text" name="weight" required
               onChange={this.handleWeightChange}
-              placeholder="體重(公斤)"/>
+              placeholder="體重(公斤)" />
           </Col>
           <Col><Form.Control type="text" name="height" required
             onChange={this.handleHeightChange}
-            placeholder="身高(厘米)"/>
+            placeholder="身高(厘米)" />
+          </Col>
+          <Col>
+            <Button variant="info" type="submit">Submit</Button>
           </Col>
         </Row>
-        <Button className="mb-4" variant="info" type="submit">Submit</Button>
         <p>BMI: {parseFloat(this.state.BMICalculated).toFixed(2)}</p>
       </Form>
     );
