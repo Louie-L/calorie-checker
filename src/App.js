@@ -6,7 +6,7 @@ import CalorieCalculatePage from './pages/CalorieCalculate'
 import Tip1Page from './pages/Tip1';
 
 import CalorieTablePage from './pages/CalorieTable';
-import AllCaloriesPage from './pages/AllCalories';
+import HomePage from './pages/Home';
 import FoodPage from './pages/calories/FoodCalories';
 import GrainsPage from './pages/calories/GrainsCalories';
 import FishEggMeatPage from './pages/calories/FishEggMeatCalories';
@@ -26,7 +26,7 @@ function App() {
       <Layout>
         <Switch>
           <Route path='/' exact>
-            <AllCaloriesPage />
+            <HomePage />
           </Route>
           <Route path='/bmi'>
             <BMIPage />

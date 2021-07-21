@@ -3,7 +3,7 @@ import { ListGroup } from 'react-bootstrap'
 
 import RedTag from '../components/ui/RedTag'
 
-function AllCaloriesPage() {
+function HomePage() {
   return (
     <section>
       <span style={{ margin: '1rem' }}>Last Updated: 2021/07/05</span>
@@ -27,4 +27,4 @@ function AllCaloriesPage() {
   );
 }
 
-export default AllCaloriesPage;
+export default HomePage;

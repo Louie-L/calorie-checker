@@ -20,8 +20,6 @@ class CalorieCalculateForm extends React.Component {
   };
 
   setDefault = () => {
-    this.setState({ age: 25 });
-    this.setState({ height: 183 });
     this.setState({ activity: 1.2 });
     this.setState({ exercise: 0 });
     this.setState({ goal: 0.85 });
