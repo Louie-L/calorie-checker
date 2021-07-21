@@ -6,7 +6,7 @@ import RedTag from '../components/ui/RedTag'
 function HomePage() {
   return (
     <section>
-      <span style={{ margin: '1rem' }}>Last Updated: 2021/07/05</span>
+      <span style={{ margin: '1rem' }}>Last Updated: 2021/07/21</span>
       <ListGroup className="m-2">
         <ListGroup.Item action className="pt-4 border-bottom-0"><Link to='/bmi'>BMI</Link><hr className="mt-3 mb-0"/></ListGroup.Item>
         <ListGroup.Item action className="border-bottom-0"><Link to='/calorie-calculate'>消耗和所需熱量</Link><RedTag text='Updated!' /><hr className="mt-3 mb-0"/></ListGroup.Item>
