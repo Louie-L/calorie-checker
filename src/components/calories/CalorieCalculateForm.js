@@ -16,7 +16,7 @@ class CalorieCalculateForm extends React.Component {
   };
 
   inputChangeHandler = (event) => {
-    this.setState({ [event.target.name]: parseFloat(event.target.value) });
+    this.setState({ [event.target.name]: (parseFloat(event.target.value) || event.target.value) });
   };
 
   setDefault = () => {
