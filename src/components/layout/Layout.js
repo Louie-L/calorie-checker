@@ -11,9 +11,13 @@ function Layout(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <NavDropdown title="貼士" id="basic-nav-dropdown">
-              <NavDropdown.Item><Link to='/bmi'>BMI</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to='/calorie-calculate'>消耗和所需熱量</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to='/tip1'>減肥淨係睇熱量?</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/bmi'>BMI 計算</Link></NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item><Link to='/blood-pressure-high'>高血壓迷思</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/blood-pressure-low'>低血壓迷思</Link></NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item><Link to='/calorie-calculate'>每日熱量需求量</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/tip1'>減肥淨係睇熱量？</Link></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="卡路里" id="basic-nav-dropdown">
               <NavDropdown.Item><Link to='/calorie-table'>卡路里表</Link></NavDropdown.Item>

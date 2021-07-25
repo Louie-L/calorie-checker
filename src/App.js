@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import BMIPage from './pages/BMI';
 import CalorieCalculatePage from './pages/CalorieCalculate'
+import LowBloodPressurePage from './pages/LowBloodPressure';
+import HighBloodPressurePage from './pages/HighBloodPressure';
 import Tip1Page from './pages/Tip1';
 
 import CalorieTablePage from './pages/CalorieTable';
@@ -33,6 +35,12 @@ function App() {
           </Route>
           <Route path='/calorie-calculate'>
             <CalorieCalculatePage />
+          </Route>
+          <Route path='/blood-pressure-high'>
+            <HighBloodPressurePage />
+          </Route>
+          <Route path='/blood-pressure-low'>
+            <LowBloodPressurePage />
           </Route>
           <Route path='/tip1'>
             <Tip1Page />
