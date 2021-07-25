@@ -6,6 +6,8 @@ import CalorieCalculatePage from './pages/CalorieCalculate'
 import LowBloodPressurePage from './pages/LowBloodPressure';
 import HighBloodPressurePage from './pages/HighBloodPressure';
 import Tip1Page from './pages/Tip1';
+import Tip2Page from './pages/Tip2';
+import Tip3Page from './pages/Tip3';
 
 import CalorieTablePage from './pages/CalorieTable';
 import HomePage from './pages/Home';
@@ -44,6 +46,12 @@ function App() {
           </Route>
           <Route path='/tip1'>
             <Tip1Page />
+          </Route>
+          <Route path='/tip2'>
+            <Tip2Page />
+          </Route>
+          <Route path='/tip3'>
+            <Tip3Page />
           </Route>
           <Route path='/calorie-table'>
             <CalorieTablePage />

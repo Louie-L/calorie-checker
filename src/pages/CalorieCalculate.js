@@ -60,9 +60,9 @@ function CalorieCalculatePage() {
             <Tabs>
                 <TabList className="mb-0 pl-0">
                     <Tab>步驟1. 估算靜止代謝率（RMR）</Tab>
-                    <Tab>步驟2. 計算你每日的能量消耗</Tab>
-                    <Tab>步驟3. 估算運動過程中消耗的熱量</Tab>
-                    <Tab>步驟4. 將步驟2和3的數值加起來，這就是你目前體重的所需熱量值。</Tab>
+                    <Tab>步驟2. 計算你每日的能量消耗（TDF）</Tab>
+                    <Tab>步驟3. 估算運動過程中消耗的熱量（TEA）</Tab>
+                    <Tab>步驟4. 將步驟2和3的數值加起來，這就是你目前體重的所需熱量值。（TDEE）</Tab>
                 </TabList>
                 <TabPanel className="mt-0">
                     <Card className="mb-3">

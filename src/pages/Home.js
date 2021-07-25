@@ -14,6 +14,8 @@ function HomePage() {
 
         <ListGroup.Item action className="border-bottom-0"><Link to='/calorie-calculate'>每日熱量需求量</Link></ListGroup.Item>
         <ListGroup.Item action className="border-bottom-0"><Link to='/tip1'>減肥淨係睇熱量？</Link></ListGroup.Item>
+        <ListGroup.Item action className="border-bottom-0"><Link to='/tip2'>進食的順序其實很重要！</Link><RedTag text='New!' /></ListGroup.Item>
+        <ListGroup.Item action className="border-bottom-0"><Link to='/tip3'>減肥亦保持靚靚皮膚</Link><RedTag text='New!' /></ListGroup.Item>
         <ListGroup.Item action className="border-bottom-0"><Link to='/calorie-table'>卡路里表</Link><hr className="mt-3 mb-0"/></ListGroup.Item>
       </ListGroup>
     </section>

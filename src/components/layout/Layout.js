@@ -18,6 +18,8 @@ function Layout(props) {
               <NavDropdown.Divider />
               <NavDropdown.Item><Link to='/calorie-calculate'>每日熱量需求量</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to='/tip1'>減肥淨係睇熱量？</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/tip2'>進食的順序其實很重要！</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to='/tip3'>減肥亦保持靚靚皮膚</Link></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="卡路里" id="basic-nav-dropdown">
               <NavDropdown.Item><Link to='/calorie-table'>卡路里表</Link></NavDropdown.Item>
