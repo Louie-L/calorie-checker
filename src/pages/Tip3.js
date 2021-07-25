@@ -1,5 +1,4 @@
 import { Card } from "react-bootstrap";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 function Tip1Page() {
