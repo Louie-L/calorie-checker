@@ -8,3 +8,5 @@
 
 `Keep updating!`
 [https://calorie-checker-bc80f.web.app/]
+
+`This website is a PWA, feel free to add it to your home screen like an app!`
